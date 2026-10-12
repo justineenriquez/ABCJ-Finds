@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Restaurants · ABCJ Finds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="restaurants">
+  <div id="site-header"></div>
+
+  <main class="container">
+    <div class="page-head">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Database</div>
+          <h1>Restaurants</h1>
+          <p><span id="count">Loading…</span> in dbRestaurants. Edit or delete any record below.</p>
+        </div>
+        <a class="btn primary" href="form.html">Add a restaurant</a>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <div class="field" style="flex:2"><input class="input" id="q" placeholder="Search by name, cuisine or location" aria-label="Search"></div>
+      <div class="field"><select class="input" id="f-cuisine" aria-label="Cuisine"><option value="">All cuisines</option></select></div>
+      <div class="field"><select class="input" id="f-location" aria-label="Location"><option value="">All locations</option></select></div>
+      <div class="field"><select class="input" id="f-sort" aria-label="Sort">
+        <option value="">Default order</option><option value="rating">Top rated</option><option value="name">Name (A–Z)</option><option value="recent">Recently updated</option>
+      </select></div>
+    </div>
+
+    <div class="grid" id="grid"><div class="empty">Loading restaurants…</div></div>
+  </main>
+
+  <!-- Edit modal -->
+  <div class="overlay" id="edit-modal" role="dialog" aria-modal="true" aria-labelledby="edit-title">
+    <form class="modal" id="edit-form" novalidate>
+      <header><h3 id="edit-title">Edit restaurant</h3><p>Update the details below, then save.</p></header>
+      <div class="body"><div id="edit-fields"></div><div class="form-error" id="edit-error" style="margin:0"></div></div>
+      <footer><button type="button" class="btn" data-close>Cancel</button><button class="btn primary" id="edit-save" type="submit">Save changes</button></footer>
+    </form>
+  </div>
+
+  <!-- Delete confirmation -->
+  <div class="overlay" id="del-modal" role="alertdialog" aria-modal="true" aria-labelledby="del-title">
+    <div class="modal">
+      <header><h3 id="del-title">Delete this restaurant?</h3>
+        <p><b id="del-name"></b> will be permanently removed from the dbRestaurants database. This can't be undone.</p></header>
+      <div class="body"></div>
+      <footer><button type="button" class="btn" data-close>No, keep it</button><button class="btn danger" id="del-confirm">Yes, delete</button></footer>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>

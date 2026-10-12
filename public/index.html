@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ABCJ Finds · Restaurants for your Appetite</title> 
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="home">
+  <div id="site-header"></div>
+
+  <section class="hero">
+    <div class="ring r1"></div><div class="ring r2"></div>
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Your dining directory</div>
+        <h1>Find restaurants for <em>your appetite.</em></h1>
+        <p class="lead">A thoughtfully organized restaurant database for discovering, managing, and keeping every local favorite up to date.</p>
+        <form class="search" id="hero-search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b9522f" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <input id="hero-q" placeholder="Enter a location in Pampanga" aria-label="Search location">
+          <button class="btn primary sm" type="submit">Find restaurants</button>
+        </form>
+        <div class="hero-actions">
+          <a class="btn primary" href="restaurants.html">Explore restaurants</a>
+          <a class="btn" href="form.html">Add a restaurant</a>
+        </div>
+      </div>
+      
+      <div class="plate" aria-hidden="true">
+        <div class="rim"></div>
+        <div class="inner"><div class="disc"><div><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v7a2 2 0 0 0 2 2v9M11 3v7a2 2 0 0 1-2 2M9 3v7M17 3c-2 1.5-3 4-3 7v3h3v8"/></svg><b>GOOD FOOD</b><small>MADE FRESH</small></div></div></div>
+        <span class="chip a">Local</span><span class="chip b">Fresh</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <section class="block">
+      <div class="section-head">
+        <div><div class="eyebrow">At a glance</div><h2>Your restaurant dashboard</h2></div>
+        <span class="note">Everything in MongoDB, neatly summarized.</span>
+      </div>
+      
+      <div class="stats">
+        <div class="card stat"><div class="ico">⌂</div><div><div class="label">Total restaurants</div><div class="num" id="stat-total">–</div><div class="sub">Live database records</div></div></div>
+        <div class="card stat"><div class="ico gold">▦</div><div><div class="label">Recent updates</div><div class="num" id="stat-recent">–</div><div class="sub">In the past 7 days</div></div></div>
+        <div class="card stat"><div class="ico sage">★</div><div><div class="label">Average rating</div><div class="num" id="stat-avg">–</div><div class="sub">Across all restaurants</div></div></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <div><div class="eyebrow">Community favorites</div><h2>Top-rated restaurants</h2></div>
+        <span class="note">Our top 5 finds, ranked by user ratings.</span>
+      </div>
+      <div class="top-grid" id="top-grid"></div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <div><div class="eyebrow">Recently touched</div><h2>Latest updates</h2></div>
+        <a class="link" href="restaurants.html">View all</a>
+      </div>
+      <div class="card list" id="latest"></div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>

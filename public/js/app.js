@@ -71,7 +71,7 @@ function fieldsHTML(v = {}, p = '') {
   ${f('name', 'Restaurant name *', `id="${p}name" placeholder="e.g. The Sunday Table" maxlength="80"`, 'Enter a name (2–80 characters).')}
   <div class="two">
     ${f('cuisine', 'Cuisine *', `list="${p}cuisines" placeholder="Select or type a cuisine" maxlength="40"`, 'Choose or type a cuisine.', list('cuisines', CUISINES))}
-    ${f('rating', 'User rating *', 'type="number" min="0" max="5" step="0.1" placeholder="4.5"', 'Rating must be 0 to 5.')}
+    ${f('rating', 'User rating *', 'type="number" min="1" max="5" step="0.1" placeholder="4.5"', 'Rating must be 1 to 5.')}
   </div>
   <div class="two">
     ${f('address', 'Location *', `list="${p}places" placeholder="e.g. Angeles City, Pampanga" maxlength="120"`, 'Enter a location.', list('places', PLACES))}
@@ -85,7 +85,7 @@ function validate(form) {
   const bad = {
     name: d.name.length < 2 || d.name.length > 80,
     cuisine: !d.cuisine,
-    rating: d.rating === '' || isNaN(+d.rating) || +d.rating < 0 || +d.rating > 5,
+    rating: d.rating === '' || isNaN(+d.rating) || +d.rating < 1 || +d.rating > 5,
     address: !d.address,
     contact: !PHONE_RX.test(contact)
   };
